@@ -18,12 +18,12 @@ function appear() {
     } else {
         document.getElementById("shape").style.borderRadius = "0";
     }
-    document.getElementById("shape").style.backgroundColor = getRandomColor();
-    document.getElementById("shape").style.width = width + "px";
-    document.getElementById("shape").style.height = width + "px";
-    document.getElementById("shape").style.top = top + "px";
-    document.getElementById("shape").style.left = left + "px";
-    document.getElementById("shape").style.display = "block";
+    $("#shape").css("backgroundColor",getRandomColor());
+    $("#shape").css("width",width + "px");
+    $("#shape").css("height",width + "px");
+    $("#shape").css("top",top + "px");
+    $("#shape").css("left",left + "px");
+    $("#shape").css("display","block");
     start = new Date().getTime();
 }
 
@@ -32,10 +32,10 @@ function appearAfterDelay() {
 }
         
 appearAfterDelay();
-document.getElementById("shape").onclick=function() {    
-    document.getElementById("shape").style.display="none";
+document.getElementById("shape").onclick=function() {   
+    $("#shape").css("display","none");
     var end=new Date().getTime();
     var timeTaken=(end-start)/1000;
-    document.getElementById("timeTaken").innerHTML=timeTaken+"s";
+    $("#timeTaken").html(timeTaken+"s");
     appearAfterDelay();
 }
